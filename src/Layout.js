@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 
   font-family: "Pretendard-Regular";
-  width: 1040px;
+  width: 1280px;
   margin: 0 auto;
 
   @media screen and (max-width: 1040px) {

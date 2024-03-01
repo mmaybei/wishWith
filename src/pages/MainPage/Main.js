@@ -1,12 +1,22 @@
 import Header from "../../components/Header";
+import Card from "../../components/Card";
 import { Container } from "../../Layout";
-import "./MainStyle";
+import { Banner, MCardLine, MCard } from "./MainStyle";
 
 const Main = () => {
   return (
     <>
       <Header />
-      <Container />
+      <Banner />
+      <Container>
+        <MCardLine>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </MCardLine>
+      </Container>
     </>
   );
 };

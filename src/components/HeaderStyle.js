@@ -14,10 +14,10 @@ export const Nav = styled.nav`
   color: #2c2c2c;
   display: flex;
   flex-direction: column;
-  width: 1040px;
+  width: 1280px;
   margin: 75px auto 0;
 
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
   }
 `;
@@ -26,12 +26,16 @@ export const NavMenu1 = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 36px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 
 export const NavMenu2 = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 
 export const MenuWrapper = styled.nav`

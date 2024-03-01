@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Nav = styled.nav`
-  font-family: "Pretendard-Regular";
+  font-family: "Pretendard-Medium";
   color: #2c2c2c;
   display: flex;
   flex-direction: column;

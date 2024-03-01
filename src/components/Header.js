@@ -4,6 +4,7 @@ import {
   Nav,
   MenuWrapper,
   NavLink,
+  CategoryLink,
   NavMenu1,
   NavMenu2,
   HSearchForm,
@@ -65,21 +66,27 @@ const Header = () => {
 
         <NavMenu2>
           <MenuWrapper>
-            <NavLink to="/uploadplan1" activestyle="true">
-              여행 계획 시작하기
-            </NavLink>
-            <NavLink to="/planlist" activestyle="true">
-              기존 계획 조회하기
-            </NavLink>
-            <NavLink to="/viewplan" activestyle="true">
-              여행지 둘러보기
-            </NavLink>
+            <CategoryLink to="/" activestyle="true">
+              홈
+            </CategoryLink>
+            <CategoryLink to="/category1" activestyle="true">
+              식료품
+            </CategoryLink>
+            <CategoryLink to="/category2" activestyle="true">
+              생필품
+            </CategoryLink>
+            <CategoryLink to="/category3" activestyle="true">
+              이화굿즈
+            </CategoryLink>
+            <CategoryLink to="/category4" activestyle="true">
+              기타
+            </CategoryLink>
           </MenuWrapper>
 
           <HSearchForm onSubmit={handleSubmit}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
             <HInput
-              placeholder="가고 싶은 국가나 도시를 검색하세요."
+              placeholder="상품 키워드를 입력하세요."
               value={searchTerm}
               ref={searchRef}
               onChange={(e) => {

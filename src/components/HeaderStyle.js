@@ -4,8 +4,8 @@ import { NavLink as Link } from "react-router-dom";
 export const HeaderWrapper = styled.div`
   hr {
     width: 100%;
-    margin: 14px 0 0;
-    border: #ff6827 1px solid;
+    margin: 8px 0 0;
+    border: #f5f5f5 1px solid;
   }
 `;
 
@@ -25,7 +25,7 @@ export const Nav = styled.nav`
 export const NavMenu1 = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 42px;
+  margin-bottom: 36px;
 `;
 
 export const NavMenu2 = styled.div`
@@ -57,12 +57,29 @@ export const NavLink = styled(Link)`
   }
 
   img {
-    height: 40px;
+    height: 36px;
+  }
+`;
+
+export const CategoryLink = styled(Link)`
+  color: #2c2c2c;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
+  margin-right: 48px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #00664f;
   }
 `;
 
 export const HSearchForm = styled.form`
-  background-color: #efefef;
+  background-color: #f5f5f5;
   border-radius: 4px;
   display: flex;
   width: 228px;
@@ -79,7 +96,7 @@ export const HSearchForm = styled.form`
 
 export const HInput = styled.input`
   border: none;
-  background-color: #efefef;
+  background-color: #f5f5f5;
   width: 100%;
 
   font-family: "Pretendard-Regular";
@@ -93,16 +110,16 @@ export const NavBtn = styled.nav`
 `;
 
 export const HButton = styled.button`
-  height: 40px;
+  height: 36px;
   border-radius: 4px;
-  background-color: white;
-  border: #e9e9e9 1px solid;
+  background-color: #f5f5f5;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-family: "Pretendard-Regular";
   font-size: 14px;
   font-weight: 600;
-  color: #2c2c2c;
+  color: #5bab93;
   padding: 10px;
 
   &:hover {

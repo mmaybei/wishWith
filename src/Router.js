@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/MainPage/Main";
-import Login from "./pages/LoginPage/Login";
+//import Login from "./pages/LoginPage/Login";
 
 export const SearchKeyword = React.createContext();
 export const DispatchContext = React.createContext();
@@ -17,7 +17,7 @@ const Router = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/login" element={<Login />} />
+            {/*<Route path="/login" element={<Login />} />*/}
           </Routes>
         </BrowserRouter>
       </DispatchContext.Provider>

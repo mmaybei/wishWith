@@ -131,3 +131,27 @@ export const HButton = styled.button`
     color: #9a9a9a;
   }
 `;
+
+export const ModalContainer = styled.div`
+  p {
+    font-family: "Pretendard-Regular";
+    color: #2c2c2c;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+`;
+export const ModalContent = styled.div`
+  background-color: #ffffff;
+  width: 250px;
+  height: 150px;
+  padding: 15px;
+`;

@@ -11,9 +11,12 @@ import {
   HInput,
   NavBtn,
   HButton,
+  ModalContainer,
+  ModalContent,
 } from "./HeaderStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { DispatchContext } from "../Router";
 
@@ -24,6 +27,9 @@ const Header = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const modalBackground = useRef();
 
   const handleSubmit = () => {
     const searchTerm = searchRef.current.value;
@@ -57,9 +63,11 @@ const Header = () => {
 
           <NavBtn>
             {isLoggedIn ? (
-              <HButton onClick={handleUserClick}>사용자 이름</HButton>
+              <HButton>사용자 이름</HButton>
             ) : (
-              <HButton onClick={handleUserClick}>로그인/회원가입</HButton>
+              <HButton onClick={() => setModalOpen(true)}>
+                로그인/회원가입
+              </HButton>
             )}
           </NavBtn>
         </NavMenu1>
@@ -99,6 +107,28 @@ const Header = () => {
         </NavMenu2>
       </Nav>
       <hr />
+      {modalOpen && (
+        <ModalContainer
+          ref={modalBackground}
+          style={{ zIndex: 9999 }}
+          onClick={(e) => {
+            if (e.target === modalBackground.current) {
+              setModalOpen(false);
+            }
+          }}
+        >
+          <ModalContent>
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={() => setModalOpen(false)}
+            />
+            <p>서비스 사용을 위해</p>
+            <p style={{ fontFamily: "Pretendard-SemiBold" }}>
+              로그인이 필요해요
+            </p>
+          </ModalContent>
+        </ModalContainer>
+      )}
     </HeaderWrapper>
   );
 };

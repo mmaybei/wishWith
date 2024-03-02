@@ -13,6 +13,9 @@ import {
   HButton,
   ModalContainer,
   ModalContent,
+  LoginContainer,
+  LoginContent,
+  LoginInput,
 } from "./HeaderStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -23,6 +26,8 @@ import { DispatchContext } from "../Router";
 const Header = () => {
   const { onSearch } = useContext(DispatchContext);
 
+  const idInput = useRef();
+  const passwordInput = useRef();
   const searchRef = useRef();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,6 +36,33 @@ const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const modalBackground = useRef();
 
+  const [state, setState] = useState({
+    id: "",
+    password: "",
+  });
+
+  const handleChangeState = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleIdSubmit = (e) => {
+    if (state.id.length < 1) {
+      idInput.current.focus();
+      return;
+    }
+
+    if (state.password.length < 1) {
+      passwordInput.current.focus();
+      return;
+    }
+  };
+
+  const handleSignUp = () => {
+    navigate("/signUp");
+  };
   const handleSubmit = () => {
     const searchTerm = searchRef.current.value;
 
@@ -122,10 +154,16 @@ const Header = () => {
               icon={faXmark}
               onClick={() => setModalOpen(false)}
             />
-            <p>서비스 사용을 위해</p>
+            <p style={{ marginTop: "24px" }}>서비스 사용을 위해</p>
             <p style={{ fontFamily: "Pretendard-SemiBold" }}>
               로그인이 필요해요
             </p>
+            <LoginContainer>
+              <LoginContent>
+                아이디
+                <LoginInput />
+              </LoginContent>
+            </LoginContainer>
           </ModalContent>
         </ModalContainer>
       )}

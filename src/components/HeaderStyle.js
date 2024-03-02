@@ -149,9 +149,33 @@ export const ModalContainer = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
 `;
+
 export const ModalContent = styled.div`
   background-color: #ffffff;
-  width: 250px;
-  height: 150px;
+  width: 320px;
+  height: 480px;
   padding: 15px;
+  border-radius: 24px;
+  svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+  }
 `;
+
+export const LoginContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const LoginContent = styled.div`
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+`;
+
+export const LoginInput = styled.div``;
